@@ -16,8 +16,10 @@ type Props = {
 
 const EnvironmentTab: React.FC<Props> = ({ envs }) => {
   const [activeValue, setActiveValue] = useQueryState("env", {
-    defaultValue: envs[0].id,
+    defaultValue: envs.length > 0 ? envs[0].id : "",
   });
+
+  if (envs.length == 0) return null;
 
   return (
     <Tabs value={activeValue} onValueChange={(v) => setActiveValue(v)}>
