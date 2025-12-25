@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import SearchBar from "./_components/search-bar";
-import { Project } from "@/server/db/schema";
+import { Environment, Project } from "@/server/db/schema";
 import {
   Card,
   CardContent,

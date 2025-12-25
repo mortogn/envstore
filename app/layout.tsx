@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Outfit } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import { NuqsAdapter } from "nuqs/adapters/next/app";
 
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -30,7 +31,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main className="mt-7">{children}</main>
+        <main className="mt-7">
+          <NuqsAdapter>{children}</NuqsAdapter>
+        </main>
 
         <Toaster />
       </body>
